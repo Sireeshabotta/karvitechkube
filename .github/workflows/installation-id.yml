@@ -1,14 +1,13 @@
-name: Show GitHub App Installation ID
+name: Show GitHub Event Payload
 
 on:
-  push:
-  pull_request:
-  issues:
   workflow_dispatch:
 
 jobs:
-  print-installation-id:
+  dump-event:
     runs-on: ubuntu-latest
     steps:
-      - name: Print installation ID from webhook
-        run: echo "Installation ID: ${{ github.event.installation.id }}"
+      - name: Dump GitHub event context
+        run: |
+          echo "Full event payload:"
+          cat $GITHUB_EVENT_PATH
