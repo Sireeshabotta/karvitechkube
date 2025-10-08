@@ -1,0 +1,14 @@
+name: Show GitHub App Installation ID
+
+on:
+  push:
+  pull_request:
+  issues:
+  workflow_dispatch:
+
+jobs:
+  print-installation-id:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print installation ID from webhook
+        run: echo "Installation ID: ${{ github.event.installation.id }}"
