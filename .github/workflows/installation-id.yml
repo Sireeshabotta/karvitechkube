@@ -1,7 +1,9 @@
 name: Show GitHub Event Payload
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   dump-event:
