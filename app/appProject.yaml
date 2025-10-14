@@ -10,7 +10,7 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - '*'
+    - 'git@github.com:Sireeshabotta/karvitechkube.git'
   destinations:
     - namespace: '*'
       server: '*'
