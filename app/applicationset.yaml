@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  name: karvitech-appset
+  namespace: karvitech
+spec:
+  generators:
+    - matrix:
+        generators:
+          - git:
+              repoURL: git@github.com:Sireeshabotta/karvitechkube.git
+              revision: master
+              directories:
+                - path: app/*
+  template:
+    spec:
+      project: karvitech-project
+      source:
+        repoURL: git@github.com:Sireeshabotta/karvitechkube.git
+        targetRevision: master
+        path: app
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: karvitech
+      syncPolicy:
+        applicationsSync: create-only
+        preserveResourcesOnDeletion: true
+        syncOptions:
+          - CreateNamespace=true
+          - ServerSideApply=true
+        # automated:
+        #   allowEmpty: true
+        #   prune: false
+        #   selfHeal: false
