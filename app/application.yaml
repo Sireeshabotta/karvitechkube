@@ -5,7 +5,7 @@ kind: Application
 metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  name: karvitech-app-git
+  name: karvitech-app
   namespace: karvitech
 spec:
   destination:
