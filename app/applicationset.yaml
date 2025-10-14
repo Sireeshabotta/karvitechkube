@@ -4,7 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "3"
   name: karvitech-appset
-  namespace: karvitech
+  namespace: karvitechapp
 spec:
   generators:
     - matrix:

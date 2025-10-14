@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   name: karvitech-app
-  namespace: karvitech
+  namespace: karvitechapp
 spec:
   destination:
     namespace: argocd
