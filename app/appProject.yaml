@@ -4,7 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: PruneLast=true
   name: karvitech-project
-  namespace: karvitechapp
+  namespace: argocd
 spec:
   namespaceResourceBlacklist:
     - group: '*'
